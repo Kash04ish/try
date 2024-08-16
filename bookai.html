@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Pricing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white" id="main-body">
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex justify-between">
+            <li><a href="#" class="text-white">Overview</a></li>
+            <li><a href="#" class="text-white">Authentication</a></li>
+            <li><a href="#" class="text-white">Endpoints</a></li>
+            <li><a href="#" class="text-white">Tutorial</a></li>
+            <li><a href="#" class="text-white">Code Examples</a></li>
+            <li><a href="#" class="text-white">Pricing</a></li>
+            <li>
+                <button id="toggleDarkMode" class="text-white">🔆</button>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mx-auto p-8">
+        <h1 class="text-2xl font-semibold mb-4">API Pricing</h1>
+        <p class="mb-4">Our API pricing is based on the model used and the number of tokens processed. Here's a breakdown of the costs:</p>
+        
+        <div class="bg-gray-700 p-4 rounded-lg overflow-x-auto">
+            <table class="min-w-full">
+                <thead>
+                    <tr class="bg-indigo-600 text-white">
+                        <th class="p-2 text-left">API</th>
+                        <th class="p-2 text-left">Model</th>
+                        <th class="p-2 text-left">Price per 1K Tokens</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t border-gray-600">
+                        <td class="p-2">OpenAI</td>
+                        <td class="p-2">GPT-3.5</td>
+                        <td class="p-2">$0.002</td>
+                    </tr>
+                    <tr class="border-t border-gray-600">
+                        <td class="p-2">OpenAI</td>
+                        <td class="p-2">GPT-4</td>
+                        <td class="p-2">$0.03</td>
+                    </tr>
+                    <tr class="border-t border-gray-600">
+                        <td class="p-2">Together AI</td>
+                        <td class="p-2">Llama-2-70b</td>
+                        <td class="p-2">$0.0008</td>
+                    </tr>
+                    <tr class="border-t border-gray-600">
+                        <td class="p-2">Together AI</td>
+                        <td class="p-2">Llama-2-13b</td>
+                        <td class="p-2">$0.0006</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold mb-2">Token Estimation</h2>
+            <p>On average, 1 token is approximately 4 characters or 0.75 words. For precise pricing, we recommend using our token calculator tool.</p>
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold mb-2">Billing</h2>
+            <p>You will only be charged for the tokens used in generating the book. The API tracks token usage and bills accordingly.</p>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleDarkMode');
+        const body = document.getElementById('main-body');
+
+        toggleButton.addEventListener('click', function() {
+            body.classList.toggle('bg-gray-900');
+            body.classList.toggle('bg-white');
+            body.classList.toggle('text-black');
+            toggleButton.textContent = body.classList.contains('bg-gray-900') ? '🔆' : '🌙';
+        });
+    </script>
+</body>
+</html>
